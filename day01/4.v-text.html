@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input id="tt" type="text" v-on:click="test" v-on:input="changeTitle">
+        <p>{{ title }}</p>
+        <h1 v-text="vText"></h1>
+    </div>
+    
+</body>
+</html>
+<script>
+    new Vue({
+        el : "#app",
+        data : {
+            title : "我想好好学习Vue",
+            vText : "<h1>我是一段纯文本</h1>"
+        },
+        methods : {
+            test : function(){
+                this.title = "Hello world"
+            },
+            changeTitle : function (enevt) {
+                this.title = event.target.value
+            }
+        }
+    })
+</script>

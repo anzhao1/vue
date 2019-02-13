@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{title}}</p>
+        <!-- v-once 只渲染元素和组件一次 -->
+        <h1>{{result()}}</h1>
+    </div>
+    
+</body>
+</html>
+<script>
+    new Vue({
+        el : "#app",
+        data : {
+            title : "hello"
+        },
+        methods : {
+            result : function(){
+                return this.title = "我想学习VUE";
+            },
+        }
+    })
+</script>
